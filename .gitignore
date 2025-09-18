@@ -1,0 +1,38 @@
+# Dependências
+node_modules/
+
+# Build / cache
+dist/
+build/
+.cache/
+
+# Relatórios do Cypress
+cypress/screenshots/
+cypress/videos/
+cypress/reports/
+
+# Configurações locais
+.env
+*.local
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+
+# IDE / editor
+.vscode/
+.idea/
+
+# Mantém toda a estrutura de testes Cypress
+!cypress/
+!cypress/e2e/
+!cypress/e2e/**/*.cy.js
+!cypress/fixtures/
+!cypress/support/
