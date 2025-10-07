@@ -1,6 +1,7 @@
 ///<reference types="cypress"/>
 import { faker } from '@faker-js/faker';
 
+
 function gerarCPFValido() {
   function random(n) {
     return Math.floor(Math.random() * n);
@@ -32,10 +33,15 @@ function gerarClienteFake() {
 }
 
 describe('Cadastro de Cliente', () => {
+  before(() => {
+    
+    cy.login(Cypress.env('USER_EMAIL'), Cypress.env('USER_PASSWORD'));
+  });
+
+  // Garante que cada teste começa na página desejada
   beforeEach(() => {
     cy.visit('https://gestao.vasques.dev/clientes');
   });
-
   it('Deve cadastrar cliente com campos obrigatórios preenchidos', () => {
     const cliente = gerarClienteFake();
     cy.cadastrarCliente(cliente);
